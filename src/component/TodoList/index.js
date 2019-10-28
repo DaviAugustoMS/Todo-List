@@ -6,7 +6,7 @@ class TodoList extends Component{
     super(props);
     this.state={
       tarefa: '',
-      items: []
+      itens: []
     }
 
     this.addItem =this.addItem.bind(this);
@@ -19,21 +19,21 @@ class TodoList extends Component{
         text: this._tarefaInput.value,
         key: Date.now()
       };
-      this.setState({ items: [...state.items, newItem] });
+      this.setState({ itens: [...state.itens, newItem] });
     }
 
     e.preventDefault();
   }
 
   log(){
-    console.log(this.state.items);
+    console.log(this.state.itens);
   }
-  
+
   render(){
     return(
       <div>
         <form>
-          <input type="text" placeholder="Nova tarefa" name="tarefa" 
+          <input type="text" placeholder="Nova tarefa?" name="tarefa" 
             value={this.state.tarefa} 
             onChange={ (ev) => this.setState({tarefa: ev.target.value})}
             ref={ (event) => this._tarefaInput = event}/>
