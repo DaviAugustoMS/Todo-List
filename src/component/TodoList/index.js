@@ -21,7 +21,7 @@ class TodoList extends Component{
       };
       this.setState({ itens: [...state.itens, newItem] });
     }
-
+    this.setState({ tarefa: ""});
     e.preventDefault();
   }
 
@@ -32,12 +32,12 @@ class TodoList extends Component{
   render(){
     return(
       <div>
-        <form>
+        <form onSubmit={this.addItem}>
           <input type="text" placeholder="Nova tarefa?" name="tarefa" 
             value={this.state.tarefa} 
             onChange={ (ev) => this.setState({tarefa: ev.target.value})}
             ref={ (event) => this._tarefaInput = event}/>
-          <button type="submit">
+          <button type="submit" >
             Adicionar
           </button>
         </form>
