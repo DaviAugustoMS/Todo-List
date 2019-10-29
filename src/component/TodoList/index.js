@@ -1,4 +1,5 @@
 import React, { Component} from 'react';
+import TodoItens from '../TodoItens/index.js';
 
 class TodoList extends Component{
 
@@ -44,6 +45,8 @@ class TodoList extends Component{
         <button onClick={this.log}>
           Log
         </button>
+
+        <TodoItens  lista={this.state.itens}/>
       </div>
     )
   }
